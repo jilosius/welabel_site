@@ -10,8 +10,6 @@ html {
     box-sizing: inherit;
   }
 
-
-  
   body {
     position: relative;
     margin: 0;
@@ -24,17 +22,29 @@ html {
     background-color: #6D4C95;
   }
   
-  
-  
-  .footer {
+   .footer {
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 1rem;
     background-color: #efefef;
     text-align: center;
+    display: flex;
+    justify-content: center;
   }
+  /*
+  .grid-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, minmax(150px, 1rem)); ; 
+    grid-template-rows: repeat(4, auto); 
+    gap: 0.1rem; 
+    width: 50%;
+  }
+  
+  .grid-item {
+    padding: 0.2rem;
+  } */
 
 @font-face {
     font-family: 'Aller';

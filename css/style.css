@@ -13,6 +13,7 @@ html {
 
   
   body {
+    font-family: 'Aller_Bd', sans-serif;
     position: relative;
     margin: 0;
     padding-bottom: 6rem;
@@ -20,7 +21,8 @@ html {
     background: #8C9ED1;
   }
 
-  .custom{
+  .navbar {
+    font-size: 1.5rem;
     background-color: #6D4C95;
   }
   

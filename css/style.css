@@ -17,6 +17,11 @@ html {
     margin: 0;
     padding-bottom: 6rem;
     min-height: 100%;
+    background: #8C9ED1;
+  }
+
+  .custom{
+    background-color: #6D4C95;
   }
   
   

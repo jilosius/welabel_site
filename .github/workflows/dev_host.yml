@@ -17,7 +17,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         server: ftpupload.net  # Replace with your FTP Hostname
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        username: if0_37633216
+        password: BUAwl33zGHKp
         local-dir: ./  # Adjust if your website files are in a subfolder
         server-dir: /htdocs  # The default root directory for InfinityFree

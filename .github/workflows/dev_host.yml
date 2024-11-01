@@ -20,4 +20,4 @@ jobs:
         username: if0_37633216
         password: BUAwl33zGHKp
         local-dir: ./  # Adjust if your website files are in a subfolder
-        server-dir: /htdocs  # The default root directory for InfinityFree
+        server-dir: /htdocs/  # The default root directory for InfinityFree

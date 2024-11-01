@@ -21,10 +21,16 @@ html {
     background: #8C9ED1;
   }
 
-  .navbar {
-    font-size: 1.5rem;
-    background-color: #6D4C95;
+  #navBar {
+    font-size: 1.2rem;
+    background-color: #6D4C95 ;
+    height: 65px;
   }
+
+  #navBar .navbar-collapse,
+#navBar .navbar-toggler {
+    background-color: #6D4C95 ;
+}
   
   
   

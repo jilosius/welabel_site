@@ -2,6 +2,7 @@
 html {
     height: 100%;
     box-sizing: border-box;
+    
   }
   
   *,
@@ -10,8 +11,6 @@ html {
     box-sizing: inherit;
   }
 
-
-  
   body {
     font-family: 'Aller_Bd', sans-serif;
     position: relative;
@@ -19,6 +18,7 @@ html {
     padding-bottom: 6rem;
     min-height: 100%;
     background: #8C9ED1;
+    padding-bottom: 80px;
   }
 
   #navBar {
@@ -36,17 +36,22 @@ html {
   font-weight: bold;
 }
   
-  
-  
+
+
   .footer {
+    background: #6D4C95;
     position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    background-color: #efefef;
-    text-align: center;
+    width: 100%;
   }
+
+
+
+@font-face {
+    font-family: 'Aller';
+    src: url('./fonts/Aller_Rg.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 

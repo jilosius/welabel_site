@@ -1,65 +1,82 @@
-
 html {
-    height: 100%;
-    box-sizing: border-box;
-    
-  }
-  
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
+  height: 100%;
+  box-sizing: border-box;
 
-  body {
-    font-family: 'Aller_Bd', sans-serif;
-    position: relative;
-    margin: 0;
-    padding-bottom: 6rem;
-    min-height: 100%;
-    background: #8C9ED1;
-    padding-bottom: 80px;
-  }
-
-  #navBar {
-    font-size: 1.2rem;
-    background-color: #6D4C95 ;
-    height: 65px;
-  }
-
-  #navBar .navbar-collapse,
-#navBar .navbar-toggler {
-    background-color: #6D4C95 ;
 }
 
-#navBar .active{
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Aller_Bd', sans-serif;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  background: #8C9ED1;
+  padding-bottom: 80px;
+  margin-top: 80px;
+}
+
+#navBar {
+  font-size: 1.2rem;
+  background-color: #6D4C95;
+  height: 65px;
+}
+
+#navBar .navbar-collapse,
+#navBar .navbar-toggler {
+  background-color: #6D4C95;
+}
+
+#navBar .active {
   font-weight: bold;
 }
-  
+
+.carousel-item img {
+  width: 100px;
+  height: 500px;
+}
+
+/* .counter-widget {
+  text-align: center;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#counter {
+  font-size: 48px;
+  color: #4caf50;
+} */
 
 
-  .footer {
-    background: #6D4C95;
-    position: absolute;
-    width: 100%;
-  }
+.footer {
+  background: #6D4C95;
+  position: absolute;
+  width: 100%;
+}
 
 
 
 @font-face {
-    font-family: 'Aller';
-    src: url('./fonts/Aller_Rg.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Aller';
+  src: url('./fonts/Aller_Rg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
 
 .test {
-    font-family: 'Aller', sans-serif;
-    font-weight: bold;
-    font-size: 2em;
-    
+  font-family: 'Aller', sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+
 }
 
 
@@ -94,14 +111,16 @@ html {
 @font-face {
   font-family: 'Aller';
   src: url('./fonts/AllerDisplay.ttf') format('truetype');
-  font-weight: 900; /* Extra-bold or display weight */
+  font-weight: 900;
+  /* Extra-bold or display weight */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Aller';
   src: url('./fonts/Aller_Lt.ttf') format('truetype');
-  font-weight: 300; /* Light weight */
+  font-weight: 300;
+  /* Light weight */
   font-style: normal;
 }
 

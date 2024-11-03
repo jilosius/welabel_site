@@ -1,3 +1,6 @@
+
+// Code to get the header and add the active class to the current page
+
 fetch("components/header.html")
   .then((response) => response.text())
   .then((data) => {
@@ -17,8 +20,30 @@ fetch("components/header.html")
     if (currentPath == "") navLinks[0].classList.add("active");
   });
 
+
+// Code to get the footer
+
 fetch("components/footer.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("footer").innerHTML = data;
   });
+
+// code for the counter
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const targetNumber = 1000; // Target number to count up to
+//   const counterElement = document.getElementById('counter');
+//   let currentNumber = 0;
+
+//   const incrementCounter = () => {
+//     if (currentNumber < targetNumber) {
+//       currentNumber++;
+//       counterElement.textContent = currentNumber;
+//       setTimeout(incrementCounter, 0.5); // Adjust speed here
+//     }
+//   };
+
+//   incrementCounter();
+// });
+

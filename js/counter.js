@@ -3,9 +3,11 @@ import { CountUp } from '/node_modules/countup.js/dist/countUp.min.js';
 const options = {
     suffix: '+',
 };
-let counter1 = new CountUp('counter', 8022, options);
-let counter2 = new CountUp('counter2', 1000, options);
-let counter3 = new CountUp('counter3', 500, options);
+let counter1 = new CountUp('counter', 95, {
+    suffix: '%'
+});
+let counter2 = new CountUp('counter2', 10, options);
+let counter3 = new CountUp('counter3', 10000, options);
 if (!counter1.error) {
     counter1.start();
     counter2.start();

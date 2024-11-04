@@ -36,6 +36,10 @@ body {
   font-weight: bold;
 }
 
+#carouselBtn {
+  background-color: #8295d3;
+}
+
 .carousel-item img {
   width: 100px;
   height: 500px;

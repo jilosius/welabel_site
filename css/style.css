@@ -23,13 +23,13 @@ html {
 
   #navBar {
     font-size: 1.2rem;
-    background-color: #6D4C95 ;
+    background-color: white ;
     height: 65px;
   }
 
   #navBar .navbar-collapse,
 #navBar .navbar-toggler {
-    background-color: #6D4C95 ;
+    background-color: white ;
 }
 
 #navBar .active{

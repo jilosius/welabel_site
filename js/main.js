@@ -14,6 +14,7 @@ fetch("components/header.html")
         link.classList.remove("active");
       }
     });
+    if (currentPath == "") navLinks[0].classList.add("active");
   });
 
 fetch("components/footer.html")
@@ -21,16 +22,3 @@ fetch("components/footer.html")
   .then((data) => {
     document.getElementById("footer").innerHTML = data;
   });
-
-document.addEventListener("DOMContentLoaded", function () {
-  const currentPath = window.location.pathname.split("/").pop(); // Get the current page
-  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-
-  navLinks.forEach((link) => {
-    if (link.getAttribute("href") === currentPath) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
-});

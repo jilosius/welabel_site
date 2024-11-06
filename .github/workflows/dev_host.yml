@@ -1,0 +1,23 @@
+name: Deploy to InfinityFree
+
+on:
+  push:
+    branches:
+      - dev  # Or the branch you want to deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ftpupload.net  # Replace with your FTP Hostname
+        username: if0_37633216
+        password: BUAwl33zGHKp
+        local-dir: ./  # Adjust if your website files are in a subfolder
+        server-dir: /htdocs/  # The default root directory for InfinityFree

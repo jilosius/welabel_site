@@ -1,35 +1,34 @@
 html {
-  height: 100%;
-  box-sizing: border-box;
+    height: 100%;
+    box-sizing: border-box;
+    
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
 
-}
+  body {
+    font-family: 'Aller_Bd', sans-serif;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    background: whitesmoke;
+    padding-bottom: 80px;
+  }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
+  #navBar {
+    font-size: 1.2rem;
+    background-color: white ;
+    height: 65px;
+  }
 
-body {
-  font-family: 'Aller_Bd', sans-serif;
-  position: relative;
-  margin: 0;
-  padding-bottom: 6rem;
-  min-height: 100%;
-  background: #8C9ED1;
-  padding-bottom: 80px;
-  margin-top: 80px;
-}
-
-#navBar {
-  font-size: 1.2rem;
-  background-color: #6D4C95;
-  height: 65px;
-}
-
-#navBar .navbar-collapse,
+  #navBar .navbar-collapse,
 #navBar .navbar-toggler {
-  background-color: #6D4C95;
+    background-color: white ;
 }
 
 #navBar .active {

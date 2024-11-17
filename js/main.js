@@ -47,3 +47,21 @@ fetch("components/footer.html")
 //   incrementCounter();
 // });
 
+
+
+// code for flow in animation
+// Select the image element with the 'flow-in' class
+const image = document.querySelector(".flow-in");
+
+// Create an Intersection Observer
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target); // Stop observing once it's visible
+        }
+    });
+}, { threshold: 0.5 }); // Adjust threshold as needed
+
+// Observe the image
+observer.observe(image);

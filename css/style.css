@@ -44,6 +44,33 @@ html {
   height: 500px;
 }
 
+
+#about_us_1_left {
+  background-color: #6a549c;
+  
+}
+
+#about_us_1_right {
+  background-color:  #6a549c;
+}
+
+/* Initial state of the image */
+.flow-in {
+  opacity: 0;
+  transform: translateX(50px); /* Adjust as needed for the desired effect */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Final state of the image when it becomes visible */
+.flow-in.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.max-width-50{
+  max-width: 50%;
+}
+
 /* .counter-widget {
   text-align: center;
   background: #ffffff;
@@ -133,3 +160,4 @@ html {
   font-weight: 300;
   font-style: italic;
 }
+

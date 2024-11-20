@@ -49,19 +49,50 @@ fetch("components/footer.html")
 
 
 
+
 // code for flow in animation
 // Select the image element with the 'flow-in' class
-const image = document.querySelector(".flow-in");
+const image = document.querySelector(".flow-in-left");
 
 // Create an Intersection Observer
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-            observer.unobserve(entry.target); // Stop observing once it's visible
+            // Add the 'active' class to all icons when the group is visible
+            document.querySelectorAll(".flow-in-left").forEach((icon) => {
+                icon.classList.add("active");
+            });
+        } else {
+            // Remove the 'active' class to reset animation when the group is not visible
+            document.querySelectorAll(".flow-in-left").forEach((icon) => {
+                icon.classList.remove("active");
+            });
         }
     });
 }, { threshold: 0.5 }); // Adjust threshold as needed
 
 // Observe the image
 observer.observe(image);
+
+// Select the wrapper element for the icons
+const iconGroup = document.querySelector(".icon-group");
+
+// Create an Intersection Observer for the icon group
+const observer2 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            // Add the 'active' class to all icons when the group is visible
+            document.querySelectorAll(".flow-in-up, .flow-in-down, .flow-in-diagonal").forEach((icon) => {
+                icon.classList.add("active");
+            });
+        } else {
+            // Remove the 'active' class to reset animation when the group is not visible
+            document.querySelectorAll(".flow-in-up, .flow-in-down, .flow-in-diagonal").forEach((icon) => {
+                icon.classList.remove("active");
+            });
+        }
+    });
+}, { threshold: 0.5 }); // Trigger when 50% of the group is visible
+
+// Observe the icon group
+observer2.observe(iconGroup);

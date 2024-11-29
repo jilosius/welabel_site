@@ -27,7 +27,11 @@ fetch("components/footer.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("footer").innerHTML = data;
-  });
+
+    // Initialize "Back to Top" functionality after the footer is loaded
+    initializeBackToTopButton();
+  })
+  .catch((error) => console.error("Error loading footer:", error));
 
 // code for the counter
 
@@ -48,6 +52,37 @@ fetch("components/footer.html")
 // });
 
 
+// Back to top button
+// Function to initialize "Back to Top" button functionality
+function initializeBackToTopButton() {
+  const backToTopButton = document.getElementById("backToTop");
+
+  if (!backToTopButton) {
+    console.error("Back to Top button not found!");
+    return;
+  }
+
+  // Show/hide the button based on scroll position
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 200) {
+      backToTopButton.style.display = "flex";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
+
+  // Scroll to the top when the button is clicked
+  backToTopButton.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+  console.log("Back to Top button initialized!");
+}
+
+
 
 
 // code for flow in animation
@@ -56,19 +91,19 @@ const image = document.querySelector(".flow-in-left");
 
 // Create an Intersection Observer
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            // Add the 'active' class to all icons when the group is visible
-            document.querySelectorAll(".flow-in-left").forEach((icon) => {
-                icon.classList.add("active");
-            });
-        } else {
-            // Remove the 'active' class to reset animation when the group is not visible
-            document.querySelectorAll(".flow-in-left").forEach((icon) => {
-                icon.classList.remove("active");
-            });
-        }
-    });
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // Add the 'active' class to all icons when the group is visible
+      document.querySelectorAll(".flow-in-left").forEach((icon) => {
+        icon.classList.add("active");
+      });
+    } else {
+      // Remove the 'active' class to reset animation when the group is not visible
+      document.querySelectorAll(".flow-in-left").forEach((icon) => {
+        icon.classList.remove("active");
+      });
+    }
+  });
 }, { threshold: 0.5 }); // Adjust threshold as needed
 
 // Observe the image
@@ -79,20 +114,23 @@ const iconGroup = document.querySelector(".icon-group");
 
 // Create an Intersection Observer for the icon group
 const observer2 = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            // Add the 'active' class to all icons when the group is visible
-            document.querySelectorAll(".flow-in-up, .flow-in-down, .flow-in-diagonal").forEach((icon) => {
-                icon.classList.add("active");
-            });
-        } else {
-            // Remove the 'active' class to reset animation when the group is not visible
-            document.querySelectorAll(".flow-in-up, .flow-in-down, .flow-in-diagonal").forEach((icon) => {
-                icon.classList.remove("active");
-            });
-        }
-    });
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // Add the 'active' class to all icons when the group is visible
+      document.querySelectorAll(".flow-in-up, .flow-in-down, .flow-in-diagonal").forEach((icon) => {
+        icon.classList.add("active");
+      });
+    } else {
+      // Remove the 'active' class to reset animation when the group is not visible
+      document.querySelectorAll(".flow-in-up, .flow-in-down, .flow-in-diagonal").forEach((icon) => {
+        icon.classList.remove("active");
+      });
+    }
+  });
 }, { threshold: 0.5 }); // Trigger when 50% of the group is visible
 
 // Observe the icon group
-observer2.observe(iconGroup);
+observer2.observe(iconGroup); // may need to move this to the about page code
+
+
+

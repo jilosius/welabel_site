@@ -81,32 +81,57 @@
         </section>
 
         <hr>
-        <section class="mb-5">
+        <section id="Services" class="mb-5">
             <div class="container">
+                <div class="row text-center m-4">
+                    <h3>We Label Services</h3>
+                </div>
                 <div class="row justify-content-around">
-                    <div class="card" style="width: 18rem;">
-                        <img src="assets/images/card1.png" class="card-img-top mt-2" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                    <div class="col-5 d-flex">
+                        <div class="card fade flex-fill">
+                            <div class="card-header">
+                                <h4 class="m-0"><i class="fa-solid fa-tag"></i> WeLabel</h4>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">The WeLabel team is committed to creating the ideal product for your brand to make you stand out from your competitors.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="assets/images/card2.jpg" class="card-img-top mt-2" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                    <div class="col-5 d-flex">
+                        <div class="card fade flex-fill">
+                            <div class="card-header">
+                                <h4 class="m-0"><i class="fa-solid fa-network-wired"></i> WeSource</h4>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">WeSource line of service matches you with the best manufacturers for your brand, depending on your unique business requirements.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="assets/images/card3.png" class="card-img-top mt-2" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
+                </div>
+                <div class="row justify-content-around mt-3">
+                    <div class="col-5 d-flex">
+                        <div class="card fade flex-fill">
+                            <div class="card-header">
+                                <h4 class="m-0"><i class="fa-solid fa-brush"></i> WeCustomize</h4>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Are you ready to create your very own products, gain a competitive edge in the market, and meet the needs and preferences of your target customer? It has never been easier!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5 d-flex">
+                        <div class="card fade flex-fill">
+                            <div class="card-header">
+                                <h4 class="m-0"><i class="fa-solid fa-truck-fast"></i> Amazon FBA</h4>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Have you found your niche products category in Amazon FBA listings? WeLabel will simplify your Amazon FBA experience by providing you with ready-to-sell products, custom-made just for your brand.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </section>
         <hr>
         <section class="mb-5">
@@ -127,6 +152,39 @@
 
 
     <div id="footer"></div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all cards with the 'fade' class
+            const cards = document.querySelectorAll(".card");
+
+            // Create an intersection observer
+            const observer = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        // When a card enters the viewport, add the 'visible' class
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        } else {
+                            // When a card leaves the viewport, remove the 'visible' class
+                            entry.target.classList.remove("visible");
+                        }
+                    });
+                },
+                {
+                    threshold: 0.6, // Trigger when 50% of the card is visible
+                }
+            );
+
+            // Observe each card
+            cards.forEach((card) => {
+                card.classList.add("fade"); // Add the 'fade' class for initial hiding
+                observer.observe(card);
+            });
+        });
+
+    </script>
 
 
 

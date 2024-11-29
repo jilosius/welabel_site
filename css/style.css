@@ -1,35 +1,36 @@
 html {
-    height: 100%;
-    box-sizing: border-box;
-    
-  }
-  
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
+  height: 100%;
+  box-sizing: border-box;
 
-  body {
-    font-family: 'Aller_Bd', sans-serif;
-    position: relative;
-    margin: 0;
-    padding-bottom: 6rem;
-    min-height: 100%;
-    background: whitesmoke;
-    padding-bottom: 80px;
-    overflow-x:hidden /* remove extra width / scroll */
-  }
+}
 
-  #navBar {
-    font-size: 1.2rem;
-    background-color: white ;
-    height: 65px;
-  }
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
-  #navBar .navbar-collapse,
+body {
+  font-family: 'Aller_Bd', sans-serif;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  background: whitesmoke;
+  padding-bottom: 80px;
+  overflow-x: hidden
+    /* remove extra width / scroll */
+}
+
+#navBar {
+  font-size: 1.2rem;
+  background-color: white;
+  height: 65px;
+}
+
+#navBar .navbar-collapse,
 #navBar .navbar-toggler {
-    background-color: white ;
+  background-color: white;
 }
 
 #navBar .active {
@@ -43,6 +44,7 @@ html {
 .carousel-item img {
   width: 100px;
   height: 500px;
+  object-fit: cover;
 }
 
 
@@ -51,7 +53,8 @@ html {
 /* Initial state of the image */
 .flow-in-left {
   opacity: 0;
-  transform: translateX(50px); /* Adjust as needed for the desired effect */
+  transform: translateX(50px);
+  /* Adjust as needed for the desired effect */
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -65,7 +68,8 @@ html {
 /* Initial state of the image */
 .flow-in-up {
   opacity: 0;
-  transform: translateY(100px); /* Adjust as needed for the desired effect */
+  transform: translateY(100px);
+  /* Adjust as needed for the desired effect */
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -79,7 +83,8 @@ html {
 /* Initial state of the image */
 .flow-in-down {
   opacity: 0;
-  transform: translateY(-100px); /* Adjust as needed for the desired effect */
+  transform: translateY(-100px);
+  /* Adjust as needed for the desired effect */
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -92,7 +97,8 @@ html {
 /* Initial state of the image */
 .flow-in-diagonal {
   opacity: 0;
-  transform: translate(-100px, 100px); /* Adjust as needed for the desired effect */
+  transform: translate(-100px, 100px);
+  /* Adjust as needed for the desired effect */
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -105,11 +111,11 @@ html {
 
 
 
-.max-width-50{
+.max-width-50 {
   max-width: 50%;
 }
 
-.max-height-50{
+.max-height-50 {
   max-height: 50%;
 }
 
@@ -202,4 +208,3 @@ html {
   font-weight: 300;
   font-style: italic;
 }
-

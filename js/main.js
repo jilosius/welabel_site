@@ -85,52 +85,125 @@ function initializeBackToTopButton() {
 
 
 
-// code for flow in animation
-// Select the image element with the 'flow-in' class
-const image = document.querySelector(".flow-in-left");
+// // Select the image element with the 'flow-in-left' class
+// const image = document.querySelector(".flow-in-left");
 
-// Create an Intersection Observer
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      // Add the 'active' class to all icons when the group is visible
-      document.querySelectorAll(".flow-in-left").forEach((icon) => {
-        icon.classList.add("active");
+// if (image) {
+//   // Only create an Intersection Observer if the image exists
+//   const observer = new IntersectionObserver((entries) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         // Add the 'active' class to all icons when the group is visible
+//         document.querySelectorAll(".flow-in-left").forEach((icon) => {
+//           icon.classList.add("active");
+//         });
+//       } else {
+//         // Remove the 'active' class to reset animation when the group is not visible
+//         document.querySelectorAll(".flow-in-left").forEach((icon) => {
+//           icon.classList.remove("active");
+//         });
+//       }
+//     });
+//   }, { threshold: 0.5 }); // Adjust threshold as needed
+
+//   // Observe the image
+//   observer.observe(image);
+// }
+
+// // Select the wrapper element for the icons
+// const iconGroup = document.querySelector(".icon-group");
+
+// if (iconGroup) {
+//   // Only create an Intersection Observer if the icon group exists
+//   const observer2 = new IntersectionObserver((entries) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         // Add the 'active' class to all icons when the group is visible
+//         document.querySelectorAll(".flow-in-up, .flow-in-down, .flow-in-diagonal").forEach((icon) => {
+//           icon.classList.add("active");
+//         });
+//       } else {
+//         // Remove the 'active' class to reset animation when the group is not visible
+//         document.querySelectorAll(".flow-in-up, .flow-in-down, .flow-in-diagonal").forEach((icon) => {
+//           icon.classList.remove("active");
+//         });
+//       }
+//     });
+//   }, { threshold: 0.5 }); // Trigger when 50% of the group is visible
+
+//   // Observe the icon group
+//   observer2.observe(iconGroup);
+// }
+
+
+// // Observe the icon group
+// observer2.observe(iconGroup); // may need to move this to the about page code
+// Function to handle the intersection and animation
+const createObserver = (element, animationClass) => {
+  if (element) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          element.classList.add(animationClass);
+        } 
       });
-    } else {
-      // Remove the 'active' class to reset animation when the group is not visible
-      document.querySelectorAll(".flow-in-left").forEach((icon) => {
-        icon.classList.remove("active");
-      });
-    }
+    }, { threshold: 0.5 }); // Adjust threshold as needed
+
+    observer.observe(element);
+  }
+};
+
+// Observe each element independently
+document.querySelectorAll(".flow-in-left").forEach((element) => {
+  createObserver(element, "active");
+});
+
+document.querySelectorAll(".flow-in-up").forEach((element) => {
+  createObserver(element, "active");
+});
+
+document.querySelectorAll(".flow-in-down").forEach((element) => {
+  createObserver(element, "active");
+});
+
+document.querySelectorAll(".flow-in-diagonal").forEach((element) => {
+  createObserver(element, "active");
+});
+
+document.querySelectorAll(".flow-in-right").forEach((element) => {
+  createObserver(element, "active");
+});
+
+
+
+
+
+// flow-in-sequential
+// Select all elements with the class .flow-in-sequential
+const elements = document.querySelectorAll(".flow-in-sequential");
+
+if (elements.length) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Add the 'active' class with a staggered delay for each element
+        const index = [...elements].indexOf(entry.target);
+        setTimeout(() => {
+          entry.target.classList.add("active");
+        }, index * 100); // 250ms delay for each element, adjust as needed
+      } else {
+        // Remove the 'active' class to reset animation when the element is not visible
+        entry.target.classList.remove("active");
+      }
+    });
+  }, { threshold: 0.5 });
+
+  // Observe each element individually
+  elements.forEach((element) => {
+    observer.observe(element);
   });
-}, { threshold: 0.5 }); // Adjust threshold as needed
+}
 
-// Observe the image
-observer.observe(image);
-
-// Select the wrapper element for the icons
-const iconGroup = document.querySelector(".icon-group");
-
-// Create an Intersection Observer for the icon group
-const observer2 = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      // Add the 'active' class to all icons when the group is visible
-      document.querySelectorAll(".flow-in-up, .flow-in-down, .flow-in-diagonal").forEach((icon) => {
-        icon.classList.add("active");
-      });
-    } else {
-      // Remove the 'active' class to reset animation when the group is not visible
-      document.querySelectorAll(".flow-in-up, .flow-in-down, .flow-in-diagonal").forEach((icon) => {
-        icon.classList.remove("active");
-      });
-    }
-  });
-}, { threshold: 0.5 }); // Trigger when 50% of the group is visible
-
-// Observe the icon group
-observer2.observe(iconGroup); // may need to move this to the about page code
 
 
 

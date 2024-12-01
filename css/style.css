@@ -81,13 +81,13 @@ body {
 }
 
 /* Initially, the cards are hidden */
-#Services .card.fade {
+#Services .card.fade, figure .row.fade {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
 
 /* When the card becomes visible, fade it in */
-#Services .card.fade.visible {
+#Services .card.fade.visible, figure .row.fade.visible {
   opacity: 1;
 }
 

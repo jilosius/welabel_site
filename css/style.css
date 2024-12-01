@@ -12,12 +12,12 @@ html {
 
 body {
   padding-top: 20px;
-  font-family: 'Aller_Bd', sans-serif;
+  font-family: 'Aller';
+  background-color: whitesmoke;
   position: relative;
   margin: 0;
   padding-bottom: 6rem;
   min-height: 100%;
-  background: whitesmoke;
   padding-bottom: 80px;
   overflow-x: hidden
     /* remove extra width / scroll */
@@ -235,35 +235,35 @@ body {
 
 @font-face {
   font-family: 'Aller';
-  src: url('./fonts/Aller_Rg.ttf') format('truetype');
+  src: url('/assets/fonts/Aller/Aller_Rg.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Aller';
-  src: url('./fonts/Aller_Bd.ttf') format('truetype');
+  src: url('/assets/fonts/Aller/Aller_Bd.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Aller';
-  src: url('./fonts/Aller_It.ttf') format('truetype');
+  src: url('/assets/fonts/Aller/Aller_It.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Aller';
-  src: url('./fonts/Aller_BdIt.ttf') format('truetype');
+  src: url('/assets/fonts/Aller/Aller_BdIt.ttf') format('truetype');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Aller';
-  src: url('./fonts/AllerDisplay.ttf') format('truetype');
+  src: url('/assets/fonts/Aller/AllerDisplay.ttf') format('truetype');
   font-weight: 900;
   /* Extra-bold or display weight */
   font-style: normal;
@@ -271,7 +271,7 @@ body {
 
 @font-face {
   font-family: 'Aller';
-  src: url('./fonts/Aller_Lt.ttf') format('truetype');
+  src: url('/assets/fonts/Aller/Aller_Lt.ttf') format('truetype');
   font-weight: 300;
   /* Light weight */
   font-style: normal;
@@ -279,8 +279,12 @@ body {
 
 @font-face {
   font-family: 'Aller';
-  src: url('./fonts/Aller_LtIt.ttf') format('truetype');
+  src: url('/assets/fonts/Aller/Aller_LtIt.ttf') format('truetype');
   font-weight: 300;
   font-style: italic;
 }
+
+
+
+
 

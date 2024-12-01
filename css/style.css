@@ -97,7 +97,7 @@ body {
 /* Initial state of the image */
 .flow-in-left {
   opacity: 0;
-  transform: translateX(50px);
+  transform: translateX(100px);
   /* Adjust as needed for the desired effect */
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
@@ -111,7 +111,7 @@ body {
 /* Initial state of the image */
 .flow-in-right {
   opacity: 0;
-  transform: translateX(-50px);
+  transform: translateX(-100px);
   /* Adjust as needed for the desired effect */
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }

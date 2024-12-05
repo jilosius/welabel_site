@@ -81,9 +81,27 @@ body {
 }
 
 /* Initially, the cards are hidden */
-#Services .card.fade, figure .row.fade {
+#Services .card.fade {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+}
+
+figure .row.fade {
+  opacity: 0;
+  transition-timing-function: ease-in;
+  transition: opacity 0.5s;
+}
+
+figure .row.fade:nth-of-type(2){
+    transition-delay: 0.3s;
+}
+
+figure .row.fade:nth-of-type(3){
+  transition-delay: 0.6s;
+}
+
+figure .row.fade:nth-of-type(4){
+  transition-delay: 0.9s;
 }
 
 /* When the card becomes visible, fade it in */

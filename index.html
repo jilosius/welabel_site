@@ -232,12 +232,13 @@
                 entry.target.classList.add("visible");
               } else {
                 // When a card leaves the viewport, remove the 'visible' class
-                entry.target.classList.remove("visible");
+                // Uncomment the below line to enable invisibilty again
+                // entry.target.classList.remove("visible");
               }
             });
           },
           {
-            threshold: 0.6, // Trigger when 50% of the card is visible
+            threshold: 0.5, // Trigger when 50% of the card is visible
           }
         );
 

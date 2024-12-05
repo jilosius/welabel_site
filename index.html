@@ -207,11 +207,183 @@
         </div>
       </section>
       <hr />
-      <section class="mb-5">
-        <div class="container">
-          <div style="width: 100%">
-            <div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0"><iframe title="Genial quiz" frameborder="0" width="1200px" height="675px" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%" src="https://view.genially.com/67283d9572f852199c4292f2" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe></div>
+      <section id="questionnaire" class="mb-5">
+        <div class="container rounded-3 p-4 shadow border border-2 border-black">
+          <!-- Questions -->
+          <div id="q1" class="question">
+            <div class="text-center mb-4">
+              <h3>Please select a service</h3>
+            </div>
+            <div class="row">
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('selectedService', 'WeLabel')">
+                  <h2>WeLabel</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('selectedService', 'WeSource')">
+                  <h2>WeSource</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('selectedService', 'WeCustomize')">
+                  <h2>WeCustomize</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('selectedService', 'Amazon FBA')">
+                  <h2>Amazon FBA</h2>
+                </button>
+              </div>
+            </div>
           </div>
+
+          <div id="q2" class="question" style="display: none">
+            <div class="text-center mb-4">
+              <h3>Which best describes your business model?</h3>
+            </div>
+            <div class="row">
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('businessModel', 'Retail')">
+                  <h2>Retail</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('businessModel', 'Wholesale')">
+                  <h2>Wholesale</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('businessModel', 'Distribution')">
+                  <h2>Distribution</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('businessModel', 'E-commerce')">
+                  <h2>E-commerce</h2>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="q3" class="question" style="display: none">
+            <div class="text-center mb-4">
+              <h3>Which categories of goods do you engage in trade?</h3>
+            </div>
+            <div class="row">
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('categories', 'Durable Goods')">
+                  <h2>Durable Goods</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('categories', 'Consumer Staples')">
+                  <h2>Consumer Staples</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('categories', 'FMCG')">
+                  <h2>FMCG</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('categories', 'Service')">
+                  <h2>Service</h2>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="q4" class="question" style="display: none">
+            <div class="text-center mb-4">
+              <h3>What’s your annual revenue?</h3>
+            </div>
+            <div class="row">
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('annualRevenue', 'Less than $50,000')">
+                  <h2>Less than $50,000</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('annualRevenue', '$50,000 - 100,000')">
+                  <h2>$50,000 - 100,000</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('annualRevenue', '$100,000 - 500,000')">
+                  <h2>$100,000 - 500,000</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('annualRevenue', 'Over $500,000')">
+                  <h2>Over $500,000</h2>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="q5" class="question" style="display: none">
+            <div class="text-center mb-4">
+              <h3>How can we assist you?</h3>
+            </div>
+            <div class="row">
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('assistance', 'Inquire about your services')">
+                  <h2>Inquire about your services</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('assistance', 'Request a quotation')">
+                  <h2>Request a quotation</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('assistance', 'Ask about shipping rates')">
+                  <h2>Ask about shipping rates</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('assistance', 'Know about service fees')">
+                  <h2>Know about service fees</h2>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="q6" class="question" style="display: none">
+            <div class="text-center mb-4">
+              <h3>What’s your preferred method of communication?</h3>
+            </div>
+            <div class="row">
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('communication', 'Email')">
+                  <h2>Email</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('communication', 'WhatsApp')">
+                  <h2>WhatsApp</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('communication', 'Phone call')">
+                  <h2>Phone call</h2>
+                </button>
+              </div>
+              <div class="col-3 d-flex justify-content-center">
+                <button class="questionnaire-card" onclick="handleSelection('communication', 'Video Call')">
+                  <h2>Video Call</h2>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="thank-you" style="display: none; text-align: center;">
+      <h2>Thank you for answering the questionnaire!</h2>
+      <button onclick="resetQuestionnaire()" style="margin-top: 20px; padding: 10px 20px; font-size: 16px; cursor: pointer;">
+        Reset Questionnaire
+      </button>
+    </div>
+  </div>
         </div>
       </section>
     </div>
@@ -247,6 +419,73 @@
           card.classList.add("fade"); // Add the 'fade' class for initial hiding
           observer.observe(card);
         });
+      });
+    </script>
+
+    <script>
+      // Temporary storage object
+      const temporaryData = {};
+      let currentQuestion = 1;
+
+      function handleSelection(key, value) {
+        // Store the selected option in JSON format
+        temporaryData[key] = value;
+
+        // Hide current question with animation
+        const currentDiv = document.getElementById(`q${currentQuestion}`);
+        currentDiv.classList.remove("show");
+
+        // Move to the next question
+        currentQuestion++;
+        const nextQuestion = document.getElementById(`q${currentQuestion}`);
+        if (nextQuestion) {
+          setTimeout(() => {
+            currentDiv.style.display = "none"; // Fully hide current question
+            nextQuestion.style.display = "block"; // Show next question
+            nextQuestion.classList.add("show"); // Animate in
+          }, 500); // Wait for the animation to complete
+        } else {
+          // Show thank-you message after the last question
+          setTimeout(() => {
+            currentDiv.style.display = "none";
+            const thankYouDiv = document.getElementById("thank-you");
+            thankYouDiv.style.display = "block";
+            thankYouDiv.classList.add("show");
+            console.log("Questionnaire completed:", temporaryData);
+          }, 500);
+        }
+      }
+
+      function resetQuestionnaire() {
+        // Reset all data and go back to the first question
+        Object.keys(temporaryData).forEach((key) => delete temporaryData[key]);
+        currentQuestion = 1;
+
+        // Hide thank-you message
+        const thankYouDiv = document.getElementById("thank-you");
+        thankYouDiv.classList.remove("show");
+        setTimeout(() => {
+          thankYouDiv.style.display = "none";
+
+          // Reset all questions
+          const allQuestions = document.querySelectorAll(".question");
+          allQuestions.forEach((question, index) => {
+            question.style.display = index === 0 ? "block" : "none"; // Show the first question
+            question.classList.remove("show");
+          });
+
+          // Animate in the first question
+          const firstQuestion = document.getElementById(`q${currentQuestion}`);
+          setTimeout(() => firstQuestion.classList.add("show"), 100);
+        }, 500);
+      }
+
+      // Initialize the first question
+      document.addEventListener("DOMContentLoaded", () => {
+        const firstQuestion = document.getElementById("q1");
+        if (firstQuestion) {
+          firstQuestion.classList.add("show");
+        }
       });
     </script>
 

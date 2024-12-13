@@ -15,7 +15,7 @@
     <header id="header"></header>
 
     <div class="container-fluid px-0">
-      <section class="mb-0 mt-3">
+      <section id="carousel" class="mb-0 mt-3">
         <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -159,7 +159,7 @@
         </div>
       </section>
       <hr />
-      <section class="mb-5">
+      <section id="services_map" class="mb-5">
         <div class="container">
           <div class="row text-center">
             <h3>How Our Services Work</h3>
@@ -377,13 +377,16 @@
               </div>
             </div>
           </div>
-          <div id="thank-you" style="display: none; text-align: center;">
-      <h2>Thank you for answering the questionnaire!</h2>
-      <button onclick="resetQuestionnaire()" style="margin-top: 20px; padding: 10px 20px; font-size: 16px; cursor: pointer;">
-        Reset Questionnaire
-      </button>
-    </div>
-  </div>
+
+          <div id="thank-you" style="display: none; text-align: center">
+            <h2>Thank you for answering the questionnaire!</h2>
+            <button onclick="resetQuestionnaire()" class="btn btn-outline-dark" style="margin-top: 20px; padding: 10px 20px; font-size: 16px; cursor: pointer">Reset Questionnaire</button>
+          </div>
+
+          <div class="text-center mt-4">
+            <div id="question-number" style="font-size: 16px; font-weight: bold">Question 1 of 6</div>
+          </div>
+          <button id="back-button" onclick="goBack()" class="btn btn-outline-dark" style="display: none; margin-top: -30px">Back</button>
         </div>
       </section>
     </div>
@@ -423,29 +426,41 @@
     </script>
 
     <script>
-      // Temporary storage object
       const temporaryData = {};
       let currentQuestion = 1;
+      const totalQuestions = 6; // Adjust the number of total questions as needed
+
+      function updateQuestionNumber() {
+        const questionNumberDiv = document.getElementById("question-number");
+        if (currentQuestion <= totalQuestions) {
+          questionNumberDiv.textContent = `Question ${currentQuestion} of ${totalQuestions}`;
+          questionNumberDiv.style.display = "block";
+        } else {
+          questionNumberDiv.style.display = "none"; // Hide question number on thank-you screen
+        }
+      }
 
       function handleSelection(key, value) {
-        // Store the selected option in JSON format
         temporaryData[key] = value;
 
-        // Hide current question with animation
         const currentDiv = document.getElementById(`q${currentQuestion}`);
         currentDiv.classList.remove("show");
 
-        // Move to the next question
         currentQuestion++;
+        updateQuestionNumber(); // Update question number
+
         const nextQuestion = document.getElementById(`q${currentQuestion}`);
+        if (currentQuestion > 1) {
+          document.getElementById("back-button").style.display = "block";
+        }
+
         if (nextQuestion) {
           setTimeout(() => {
-            currentDiv.style.display = "none"; // Fully hide current question
-            nextQuestion.style.display = "block"; // Show next question
-            nextQuestion.classList.add("show"); // Animate in
-          }, 500); // Wait for the animation to complete
-        } else {
-          // Show thank-you message after the last question
+            currentDiv.style.display = "none";
+            nextQuestion.style.display = "block";
+            nextQuestion.classList.add("show");
+          }, 500);
+        } else if (!nextQuestion && document.getElementById("thank-you")) {
           setTimeout(() => {
             currentDiv.style.display = "none";
             const thankYouDiv = document.getElementById("thank-you");
@@ -456,31 +471,65 @@
         }
       }
 
-      function resetQuestionnaire() {
-        // Reset all data and go back to the first question
-        Object.keys(temporaryData).forEach((key) => delete temporaryData[key]);
-        currentQuestion = 1;
-
-        // Hide thank-you message
+      function goBack() {
         const thankYouDiv = document.getElementById("thank-you");
-        thankYouDiv.classList.remove("show");
-        setTimeout(() => {
+        if (thankYouDiv.style.display === "block") {
           thankYouDiv.style.display = "none";
+          thankYouDiv.classList.remove("show");
 
-          // Reset all questions
-          const allQuestions = document.querySelectorAll(".question");
-          allQuestions.forEach((question, index) => {
-            question.style.display = index === 0 ? "block" : "none"; // Show the first question
-            question.classList.remove("show");
-          });
+          currentQuestion--;
+          updateQuestionNumber(); // Update question number
+          const lastQuestion = document.getElementById(`q${currentQuestion}`);
+          lastQuestion.style.display = "block";
+          setTimeout(() => lastQuestion.classList.add("show"), 100);
 
-          // Animate in the first question
-          const firstQuestion = document.getElementById(`q${currentQuestion}`);
-          setTimeout(() => firstQuestion.classList.add("show"), 100);
-        }, 500);
+          document.getElementById("back-button").style.display = "block";
+          return;
+        }
+
+        if (currentQuestion > 1) {
+          const currentDiv = document.getElementById(`q${currentQuestion}`);
+          currentDiv.classList.remove("show");
+
+          currentQuestion--;
+          updateQuestionNumber(); // Update question number
+          const prevQuestion = document.getElementById(`q${currentQuestion}`);
+
+          setTimeout(() => {
+            currentDiv.style.display = "none";
+            prevQuestion.style.display = "block";
+            prevQuestion.classList.add("show");
+          }, 500);
+
+          if (currentQuestion === 1) {
+            document.getElementById("back-button").style.display = "none";
+          }
+        }
       }
 
-      // Initialize the first question
+      function resetQuestionnaire() {
+        Object.keys(temporaryData).forEach((key) => delete temporaryData[key]);
+        currentQuestion = 1;
+        updateQuestionNumber(); // Reset question number
+
+        const thankYouDiv = document.getElementById("thank-you");
+        thankYouDiv.style.display = "none";
+        thankYouDiv.classList.remove("show");
+
+        const allQuestions = document.querySelectorAll(".question");
+        allQuestions.forEach((question, index) => {
+          question.style.display = index === 0 ? "block" : "none";
+          question.classList.remove("show");
+        });
+
+        document.getElementById("back-button").style.display = "none";
+
+        const firstQuestion = document.getElementById("q1");
+        setTimeout(() => {
+          firstQuestion.classList.add("show");
+        }, 100);
+      }
+
       document.addEventListener("DOMContentLoaded", () => {
         const firstQuestion = document.getElementById("q1");
         if (firstQuestion) {

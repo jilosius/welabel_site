@@ -254,6 +254,14 @@ figure .row.fade:nth-of-type(4){
 }
 
 
+
+#map {
+  height: 100%;
+  height: 400px; 
+  width: 100%; 
+}
+
+
 @font-face {
   font-family: 'Aller';
   src: url('/assets/fonts/Aller/Aller_Rg.ttf') format('truetype');

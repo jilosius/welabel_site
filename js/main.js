@@ -204,7 +204,22 @@ if (elements.length) {
   });
 }
 
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form from reloading the page
 
+  // Collect form data
+  const formData = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value
+  };
+
+  // Convert to JSON and print to console
+  console.log(JSON.stringify(formData));
+
+  // Optional: Clear the form after submission
+  this.reset();
+});
 // Initialize and add the map
 // let map;
 

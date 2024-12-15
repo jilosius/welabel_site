@@ -399,7 +399,7 @@
           <div class="d-flex justify-content-end">
             <button type="submit" class="btn rounded-pill px-4 text-white" style="background-color: #6b4fa6;">Send</button>
           </div>
-        </form>~
+        </form>
       </div>
     </div>
   </div>
@@ -480,24 +480,6 @@
     initMap();
   </script>
 
-<script>
-  document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from reloading the page
-
-    // Collect form data
-    const formData = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      message: document.getElementById('message').value
-    };
-
-    // Convert to JSON and print to console
-    console.log(JSON.stringify(formData));
-
-    // Optional: Clear the form after submission
-    this.reset();
-  });
-</script>
 
 </body>
 

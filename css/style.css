@@ -324,7 +324,7 @@ figure .row.fade:nth-of-type(4){
 .questionnaire-card {
   width: 190px;
   height: 254px;
-  background: #07182E;
+  background: #6a549c;
   position: relative;
   display: flex;
   place-content: center;
@@ -364,7 +364,7 @@ figure .row.fade:nth-of-type(4){
 .questionnaire-card::after {
   content: '';
   position: absolute;
-  background: #07182E;
+  background: #6a549c;
   ;
   inset: 5px;
   border-radius: 15px;

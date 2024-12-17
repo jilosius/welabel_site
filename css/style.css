@@ -357,6 +357,13 @@ figure .row.fade.visible {
   /* color: #8295d3; */
 }
 
+
+.custom-border {
+  border-color: #6b4fa6 !important;
+  border-width: 3px !important;
+}
+
+
 @keyframes rotBGimg {
   from {
     transform: rotate(0deg);

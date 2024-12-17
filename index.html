@@ -602,8 +602,10 @@
 
             function goBack() {
                 const thankYouDiv = document.getElementById("thank-you");
+                const resetButton = document.getElementById("resetQuestionnaireButton");
                 if (thankYouDiv.style.display === "block") {
                     thankYouDiv.style.display = "none";
+                    resetButton.style.display = "none";
                     thankYouDiv.classList.remove("show");
 
                     currentQuestion--;

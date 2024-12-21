@@ -373,7 +373,7 @@ figure .row.fade.visible {
 .animate__animated.animate__fadeInLeft,
 .animate__animated.animate__fadeInRight,
 .animate__animated.animate__fadeInUp {
-  opacity: 1;
+  opacity: 1 ;
   visibility: visible;
 }
 

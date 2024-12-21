@@ -220,6 +220,39 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   // Optional: Clear the form after submission
   this.reset();
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Select the specific section by its ID
+  const section = document.getElementById("services-protocol");
+  const animatedItems = section.querySelectorAll(".animate__animated");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add animation classes to all child elements
+          animatedItems.forEach((item) => {
+            item.style.opacity = "1"; // Make element visible
+            item.style.visibility = "visible"; // Allow interactions
+            item.classList.add("animate__fadeInLeft", "animate__fast", "my-fast-element");
+          });
+          observer.unobserve(section); // Stop observing this section after animations trigger
+        }
+      });
+    },
+    { threshold: 0.5 } // Trigger when 50% of the section is visible
+  );
+
+  observer.observe(section);
+});
+
+
+
+
+
+
 // Initialize and add the map
 // let map;
 

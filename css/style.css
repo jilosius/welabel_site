@@ -363,6 +363,24 @@ figure .row.fade.visible {
   border-width: 3px !important;
 }
 
+/* Customize animation delay for each element */
+.animate__animated {
+  animation-delay: var(--animate-delay, 0s);
+  opacity: 0; /* Start hidden */
+  visibility: hidden; /* Prevents it from being interactive */
+}
+
+.animate__animated.animate__fadeInLeft,
+.animate__animated.animate__fadeInRight,
+.animate__animated.animate__fadeInUp {
+  opacity: 1;
+  visibility: visible;
+}
+
+.my-fast-element {
+  --animate-duration: 0.4s; /* Faster animations for specific elements */
+}
+
 
 @keyframes rotBGimg {
   from {
